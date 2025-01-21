@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'Cornerita-Bold';
+    src: url('./Cornerita_Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Cornerita-Regular';
+    src: url('./Cornerita_Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Cornerita-Thin';
+    src: url('./Cornerita_Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
