@@ -1,0 +1,301 @@
+/* 1 */
+#first {
+    padding-top: 52px;
+}
+#first > h1 {
+    font-family: 'Cornerita-Bold';
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 95%;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 39px;
+}
+#first > h1 > span {
+    color: #32d996;    
+}
+#first > p {
+    font-family: 'Cornerita-Regular';
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 155%;
+    letter-spacing: 0.03em;
+    text-align: center;
+    color: #e0e0e0;
+    margin: 0;
+    margin-bottom: 39px;
+}
+#first > button {
+    border: none;
+    border-radius: 10px;
+    padding: 14px 32px;
+    width: 400px;
+    height: 91px;
+    width: 400px;
+    box-shadow: 0 17px 26px 0 rgba(22, 171, 255, 0.7), 0 17px 100px 0 rgba(22, 171, 255, 0.75), 0 17px 149px 0 rgba(22, 171, 255, 0.37);
+    background: #16abff;
+    font-family: 'Cornerita-Regular';
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 155%;
+    letter-spacing: 0.05em;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 134px;
+}
+#first > .items {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+}
+#first > .items > .item {
+    border: 1px solid #1a3f51;
+    border-radius: 10px;
+    padding: 24px 35px;
+    width: 404px;
+    height: 200px;
+    background: #0e232d;
+    display: flex;
+    position: relative;
+}
+#first > .items > .item > img {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#first > .items > .item > .text {
+    text-align: left;
+    margin-left: 25px;
+    width: 225px;
+    position: absolute;
+    top: 50%;
+    left: 140px;
+    transform: translateY(-50%);
+}
+#first > .items > .item > .text > h4 {
+    font-family: 'Cornerita-Bold';
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 135%;
+    letter-spacing: 0.05em;
+    color: #e0e0e0;
+    margin-bottom: 0;
+}
+#first > .items > .item > .text > p {
+    font-family: 'Cornerita-Thin';
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 155%;
+    letter-spacing: 0.05em;
+    color: #e0e0e0;
+    margin: 0;
+}
+/* 2 */
+#second {
+    padding-top: 45px;
+    margin-top: 30px;
+    padding-bottom: 88px;
+}
+#second > .what_is {
+    width: 850px;
+    gap: 73px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 59px;
+}
+#second > .what_is > .text {
+    text-align: center;
+    margin-top: 15px;
+}
+#second > .what_is > .text > h2 {
+    font-family: 'Cornerita-Bold';
+    font-weight: 700;
+    font-size: 48px;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 30px;
+}
+#second > .what_is > .text > p {
+    font-family: 'Cornerita-Thin';
+    font-weight: 100;
+    font-size: 21px;
+    line-height: 155%;
+    letter-spacing: 0.05em;
+    text-align: center;
+    color: #e0e0e0;
+    margin: 0;
+}
+#second > .items {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 73px;
+    width: 960px;
+    height: 516px;
+}
+#second > .items > .item {
+    border: 1px solid #1a3f51;
+    border-radius: 10px;
+    padding: 24px 35px;
+    width: 473px;
+    height: 251px;
+    background: #0e232d;
+    display: flex;
+    position: absolute;
+}
+#second > .items > .item > img {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#second > .items > .item > .text {
+    text-align: left;
+    margin-left: 25px;
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 140px;
+    transform: translateY(-50%);
+}
+#second > .items > .item > .text > h4 {
+    font-family: 'Cornerita-Bold';
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 135%;
+    letter-spacing: 0.05em;
+    color: #e0e0e0;
+    margin-bottom: 0;
+}
+#second > .items > .item > .text > p {
+    font-family: 'Cornerita-Thin';
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 155%;
+    letter-spacing: 0.05em;
+    color: #e0e0e0;
+    margin: 0;
+}
+#second > .items > :nth-child(1) {
+    left: 0;
+    top: 0;
+}
+#second > .items > :nth-child(2) {
+    left: auto;
+    top: 0;
+    right: 0;
+}
+#second > .items > :nth-child(3) {
+    left: 0;
+    top: auto;
+    bottom: 0;
+}
+#second > .items > :nth-child(4) {
+    left: auto;
+    top: auto;
+    bottom: 0;
+    right: 0;
+}
+#second > .items > :nth-child(1) > img {
+    margin-left: 2px;
+}
+#second > .items > :nth-child(2) > img {
+    margin-left: 9px;
+}
+#second > .items > :nth-child(3) > img {
+    margin-left: 9px;
+}
+#second > .items > :nth-child(4) > img {
+    margin-left: 4px;
+}
+#second > button {
+    border: none;
+    border-radius: 10px;
+    padding: 14px 32px;
+    width: 400px;
+    height: 91px;
+    width: 400px;
+    box-shadow: 0 17px 26px 0 rgba(22, 171, 255, 0.7), 0 17px 100px 0 rgba(22, 171, 255, 0.75), 0 17px 149px 0 rgba(22, 171, 255, 0.37);
+    background: #16abff;
+    font-family: 'Cornerita-Regular';
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 155%;
+    letter-spacing: 0.05em;
+    text-align: center;
+    color: #fff;
+    margin-top: 37px;
+}
+#second > p {
+    font-family: 'Cornerita-Thin';
+    font-weight: 100;
+    font-size: 21px;
+    line-height: 155%;
+    letter-spacing: 0.05em;
+    text-align: center;
+    color: #e0e0e0;
+    margin: 0;
+    margin-top: 37px;
+}
+/* 3 */
+#third {
+    padding-top: 81px;
+    padding-bottom: 127px;
+}
+#third > h2 {
+    font-family: 'Cornerita-Bold';
+    font-weight: 700;
+    font-size: 48px;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: #fff;
+}
+#third > .items {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    margin-top: 53px;
+}
+#third > .items > .item {
+    border: 1px solid #16754f;
+    border-radius: 10px;
+    padding: 15px 10px 15px 205px;
+    width: 404px;
+    height: 200px;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#third > .items > .item > .text {
+    text-align: left;
+    margin-left: 25px;
+    width: 170px;
+    position: absolute;
+    top: 50%;
+    left: auto;
+    right: 19px;
+    transform: translateY(-50%);
+}
+#third > .items > .item > .text > h4 {
+    font-family: 'Cornerita-Bold';
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 165%;
+    letter-spacing: 0.05em;
+    color: #e0e0e0;
+    margin-bottom: 0;
+}
+#third > .items > .item-1 {
+    background: url(../public/img/third_1.png);
+}
+#third > .items > .item-2 {
+    background: url(../public/img/third_2.png);
+}
+#third > .items > .item-3 {
+    background: url(../public/img/third_3.png);
+}

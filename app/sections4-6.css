@@ -1,0 +1,261 @@
+/* 4 */
+#fourth {
+    padding-top: 48px;
+    padding-bottom: 97px;
+}
+#fourth > h2 {
+    font-family: 'Cornerita-Bold';
+    font-weight: 700;
+    font-size: 48px;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 3px;
+}
+#fourth > p {
+    font-family: 'Cornerita-Regular';
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 155%;
+    letter-spacing: 0.05em;
+    text-align: center;
+    color: #99b3c0;
+}
+#fourth > .plans {
+    position: relative;
+    margin-top: 44px;
+    width: 600px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#fourth > .plans > .left_bar {
+    position: absolute;
+    left: 20px;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: url(../public/img/left_bar.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#fourth > .plans > .plan {
+    margin-left: 40px;
+    width: 520px;
+    height: 226px;
+    position: relative;
+    display: flex;
+    margin-bottom: 15px;    
+}
+#fourth > .plans > .plan > .case {
+    background: url(../public/img/zamok3.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 185px;
+    height: 185px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: -60px;
+}
+#fourth > .plans > .plan > .text {
+    border: 7px solid #fff;
+    padding: 24px 35px 24px 35px;
+    width: 436px;
+    height: auto;
+    position: absolute;
+    right: 0;
+    left: auto;
+    text-align: left;
+}
+#fourth > .plans > .plan > .text > h3 {
+    font-family: 'Cornerita-Regular';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 155%;
+    letter-spacing: 0.05em;
+    color: #fff;
+}
+#fourth > .plans > .plan > .text > p {
+    font-family: 'Cornerita-Thin';
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 155%;
+    letter-spacing: 0.05em;
+    color: #e0e0e0;
+    margin: 0;
+}
+#fourth > .plans > :nth-child(3) {
+    height: 201px;
+}
+#fourth > .plans > :nth-child(4) {
+    height: 237px;
+}
+#fourth > .plans > :nth-child(5) {
+    height: 181px;
+}
+#fourth > .plans > .disactiv > .case {
+    background: url(../public/img/zamok2.svg);
+}
+#fourth > .plans > .disactiv > .text {
+    border: 7px solid #32d996;
+}
+/* 5 */
+#fifth_1, #fifth_2 {
+    margin-top: 25px;
+    padding-top: 69px;
+    padding-bottom: 85px;
+}
+#fifth_1 > h2 {
+    font-family: 'Cornerita-Bold';
+    font-weight: 700;
+    font-size: 48px;
+    letter-spacing: 0.02em;
+    color: #fff;
+    margin-top: 185px;
+    margin-left: 25px;
+}
+#fifth_1 > h2 > span {
+    color: #32d996;    
+}
+#fifth_2 > .items {
+    height: auto;
+    padding: 0px 15px;
+    width: 686px;
+    margin-left: 45px;
+}
+#fifth_2 > .items > .item {
+    width: 100%;
+    height: auto;
+    border: 1px solid #1a3f51;
+    border-radius: 10px;
+    padding: 24px 35px;
+    display: flex;
+    position: relative;
+    background: #0e232d;
+    margin-bottom: 14px;
+    opacity: 0;
+    transform: translateY(-70px);
+    transition: opacity 1s, transform 1s;
+}
+#fifth_2 > .items > .item.animate {
+    animation: appear 0.5s forwards;
+}
+#fifth_2 > .items > .item.animate:nth-child(1) {
+    animation-delay: 1s;
+}
+#fifth_2 > .items > .item.animate:nth-child(2) {
+    animation-delay: 1.5s;
+}
+#fifth_2 > .items > .item.animate:nth-child(3) {
+    animation-delay: 2s;
+}
+#fifth_2 > .items > .item.animate:nth-child(4) {
+    animation-delay: 2.5s;
+}
+@keyframes appear {
+    0% {
+      opacity: 0;
+      transform: translateY(-70px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+#fifth_2 > .items > .item > .text > h3 {
+    font-family: 'Cornerita-Regular';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 155%;
+    letter-spacing: 0.05em;
+    color: #fff;
+    margin-left: 65px;
+    margin-top: 10px ;
+}
+#fifth_2 > .items > .item > button {
+    background: url(../public/img/close.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: none;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#fifth_2 > .items > .open {
+    border: 1px solid #13583c;
+    background: #091b14;
+}
+#fifth_2 > .items > .open > button {
+    background: url(../public/img/close_2.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#fifth_2 > .items > .item > .text > p {
+    font-family: 'Cornerita-Regular';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 155%;
+    letter-spacing: 0.05em;
+    color: #a9a9a9;
+    margin: 0;
+    display: none;
+    margin-top: 10px;
+    margin-left: 65px;
+}
+#fifth_2 > .items > .open > .text > p {
+    display: block;
+}
+/* 6 */
+#sixth_1, #sixth_2 {
+    margin-top: 25px;
+    padding-top: 16px;
+    padding-bottom: 101px;
+}
+#sixth_1 > h2 {
+    font-family: 'Cornerita-Bold';
+    font-weight: 700;
+    font-size: 48px;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: #fff;
+    margin: 0;
+    margin-top: 80px;
+}
+#sixth_1 > h2 > span {
+    color: #16abff;
+}
+#sixth_1 > h3 {
+    font-family: 'Cornerita-Regular';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 155%;
+    letter-spacing: 0.05em;
+    text-align: center;
+    color: #fff;
+    margin-top: 31px;
+}
+#sixth_1 > button {
+    border-radius: 20px;
+    width: 360px;
+    height: 95px;
+    border: none;
+    box-shadow: 0 17px 26px 0 rgba(22, 171, 255, 0.37), 0 17px 100px 0 rgba(22, 171, 255, 0.37), 0 17px 149px 0 rgba(22, 171, 255, 0.37);
+    background: #16abff;
+    font-family: 'Cornerita-Regular';
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 155%;
+    letter-spacing: 0.05em;
+    text-align: center;
+    color: #fff;
+    margin-top: 31px;
+}
+#sixth_2 > img {
+    margin-top: 91px;
+}
