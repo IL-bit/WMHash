@@ -1,4 +1,5 @@
-import React from 'react';
+"use client";
+import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import LogoSvg from '../../public/img/logo_2.svg';
 import img_1 from '../../public/img/move.svg';
@@ -51,10 +52,56 @@ const Section2 = () => {
                 image: img_4,
             }
         ]
-    }
+    };
+    const whatIsRef = useRef(null);
+    const itemRefs = useRef([]);
+    const sectionRef = useRef(null);
+  
+    useEffect(() => {
+      const whatIs = whatIsRef.current;
+      whatIs.style.opacity = 0;
+  
+      const items = itemRefs.current;
+      items.forEach((item, index) => {
+        item.style.transform = 'translateY(100%)';
+        item.style.opacity = 0;
+      });
+  
+      const animation = () => {
+        whatIs.style.opacity = 1;
+        whatIs.style.transition = 'all 1s ease-in-out';
+  
+        items.forEach((item, index) => {
+          setTimeout(() => {
+            item.style.transform = 'translateY(0)';
+            item.style.opacity = 1;
+            item.style.transition = 'all 1s ease-in-out';
+          }, 500 + index * 500);
+        });
+      };
+  
+      const handleScroll = () => {
+        if (sectionRef.current) {
+          const sectionTop = sectionRef.current.offsetTop;
+          const sectionHeight = sectionRef.current.offsetHeight;
+          const windowScrollTop = window.scrollY;
+          const windowHeight = window.innerHeight;
+  
+          if (windowScrollTop + windowHeight > sectionTop && windowScrollTop < sectionTop + sectionHeight) {
+            animation();
+          }
+        }
+      };
+  
+      window.addEventListener('scroll', handleScroll);
+  
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, []);
   return (
-    <section className="col-xxl-12 col-xl-12 col-lg-12 col-sm-12 col-12 text-center" id='second'>
-        <div className='what_is'>
+    <section ref={sectionRef} className="col-xxl-12 col-xl-12 col-lg-12 col-sm-12 col-12 text-center" id='second'>
+        <div className='what_is' ref={whatIsRef}>
             <Image src={LogoSvg} alt='#' />
             <div className="text">
                 <h2>{section2Eng.h2}</h2>
@@ -63,7 +110,7 @@ const Section2 = () => {
         </div>
         <div className="items">
             {section2Eng.items.map((item, index) => (
-                <div className="item" key={index}>
+                <div className="item" key={index} ref={(ref) => (itemRefs.current[index] = ref)}>
                 <Image src={item.image} alt="#"/>
                     <div className='text'>
                         <h4>{item.h4}</h4>

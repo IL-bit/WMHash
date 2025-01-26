@@ -1,4 +1,5 @@
-import React from 'react';
+"use client";
+import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import img_0 from '../../public/img/S.svg';
 import img_1 from '../../public/img/person.svg';
@@ -44,8 +45,23 @@ const Section1 = () => {
       }
     ]
   };
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    section.style.transform = 'translateY(100%)';
+    section.style.opacity = 0;
+
+    const animation = () => {
+      section.style.transform = 'translateY(0)';
+      section.style.opacity = 1;
+      section.style.transition = 'all 2s ease-in-out';
+    };
+
+    setTimeout(animation, 500);
+  }, []);
   return (
-    <section className="col-xxl-12 col-xl-12 col-lg-12 col-sm-12 col-12 text-center" id='first'>
+    <section ref={sectionRef} className="col-xxl-12 col-xl-12 col-lg-12 col-sm-12 col-12 text-center" id='first'>
         <h1><span>{section1Eng.h1[1]}</span><br/>{section1Eng.h1[2]}</h1>
         <p>{section1Eng.p[1]}<br/>{section1Eng.p[2]}</p>
         <button>{section1Eng.button}</button>

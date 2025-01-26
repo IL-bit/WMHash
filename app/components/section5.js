@@ -1,9 +1,9 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const Section5 = () => {
-    const [isVisible, setIsVisible] = useState(false);
-    const [itemsVisible, setItemsVisible] = useState([]);
+  const [isVisible, setIsVisible] = useState(false);
+  const [itemsVisible, setItemsVisible] = useState([]);
     const section5Eng = {
         h2: {
             1: 'Frequently',
@@ -29,60 +29,68 @@ const Section5 = () => {
             }
         ]
     };
+    const itemsRef = useRef([]);
+    const sectionRef = useRef(null);
+  
     useEffect(() => {
-        const handleScroll = () => {
-          const fifth2 = document.getElementById('fifth_2');
-          const rect = fifth2.getBoundingClientRect();
-          if (rect.top < window.innerHeight) {
-            setIsVisible(true);
-          }
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-          window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-    
-    useEffect(() => {
-        if (isVisible) {
-          const intervalId = setInterval(() => {
-            const nextItem = section5Eng.items[itemsVisible.length];
-            if (nextItem) {
-              setItemsVisible([...itemsVisible, nextItem]);
-              const item = document.querySelector(`.item:nth-child(${itemsVisible.length + 1})`);
-              item.classList.add('animate');
-            } else {
-              clearInterval(intervalId);
-            }
-          }, 500);
-          return () => {
-            clearInterval(intervalId);
-          };
-        }
-      }, [isVisible, itemsVisible]);
-      const handleOpen = (event) => {
-        const currentItem = event.target.closest('.item');
-        currentItem.classList.toggle('open');
+      const items = itemsRef.current;
+      items.forEach((item, index) => {
+        item.style.transform = 'translateY(100%)';
+        item.style.opacity = 0;
+      });
+  
+      const animation = () => {
+        items.forEach((item, index) => {
+          setTimeout(() => {
+            item.style.transform = 'translateY(0)';
+            item.style.opacity = 1;
+            item.style.transition = 'all 0.5s ease-in-out';
+          }, 200 + index * 200);
+        });
       };
+  
+      const handleScroll = () => {
+        if (sectionRef.current) {
+          const sectionTop = sectionRef.current.offsetTop;
+          const sectionHeight = sectionRef.current.offsetHeight;
+          const windowScrollTop = window.scrollY;
+          const windowHeight = window.innerHeight;
+  
+          if (windowScrollTop + windowHeight > sectionTop && windowScrollTop < sectionTop + sectionHeight) {
+            animation();
+          }
+        }
+      };
+  
+      window.addEventListener('scroll', handleScroll);
+  
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, []);
+    const handleOpen = (event) => {
+      const currentItem = event.target.closest('.item');
+      currentItem.classList.toggle('open');
+    };
   return (
     <>
         <section className="col-xxl-5 col-xl-4 col-lg-7 col-sm-12 col-12" id="fifth_1">
             <h2><span>{section5Eng.h2[1]}</span><br/>{section5Eng.h2[2]}<br/>{section5Eng.h2[3]}</h2>
         </section>  
-        <section className="col-xxl-7 col-xl-8 col-lg-5 col-sm-12 col-12" id="fifth_2">
+        <section ref={sectionRef} className="col-xxl-7 col-xl-8 col-lg-5 col-sm-12 col-12" id="fifth_2">
             <div className="items">
-            {itemsVisible.map((item, index) => (
-                <div
-                className={`item ${isVisible ? 'animate' : ''} item-${index}`}
+            {section5Eng.items.map((item, index) => (
+              <div
+                ref={(ref) => (itemsRef.current[index] = ref)}
+                className={`item item-${index}`}
                 key={index}
-                style={{ animationDelay: `${index * 0.5}s` }}
-                >
-                    <button onClick={handleOpen} />
-                    <div className="text">
-                        <h3>{item.question}</h3>
-                        <p>{item.answer}</p>                    
-                    </div>
+              >
+                <button onClick={handleOpen} />
+                <div className="text">
+                  <h3>{item.question}</h3>
+                  <p>{item.answer}</p>
                 </div>
+              </div>
             ))}
             </div>
         </section> 

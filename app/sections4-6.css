@@ -135,34 +135,6 @@
     position: relative;
     background: #0e232d;
     margin-bottom: 14px;
-    opacity: 0;
-    transform: translateY(-70px);
-    transition: opacity 1s, transform 1s;
-}
-#fifth_2 > .items > .item.animate {
-    animation: appear 0.5s forwards;
-}
-#fifth_2 > .items > .item.animate:nth-child(1) {
-    animation-delay: 1s;
-}
-#fifth_2 > .items > .item.animate:nth-child(2) {
-    animation-delay: 1.5s;
-}
-#fifth_2 > .items > .item.animate:nth-child(3) {
-    animation-delay: 2s;
-}
-#fifth_2 > .items > .item.animate:nth-child(4) {
-    animation-delay: 2.5s;
-}
-@keyframes appear {
-    0% {
-      opacity: 0;
-      transform: translateY(-70px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
 }
 #fifth_2 > .items > .item > .text > h3 {
     font-family: 'Cornerita-Regular';

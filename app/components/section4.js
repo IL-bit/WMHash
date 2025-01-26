@@ -1,4 +1,5 @@
-import React from 'react';
+"use client";
+import React, { useEffect, useRef } from 'react';
 
 const Section4 = () => {
     const section4Eng = {
@@ -23,11 +24,41 @@ const Section4 = () => {
             }
         ]
     };
+    const plansRef = useRef(null);
+
+  useEffect(() => {
+    const plans = plansRef.current;
+    plans.style.opacity = 0;
+
+    const animation = () => {
+      plans.style.opacity = 1;
+      plans.style.transition = 'all 1s ease-in-out';
+    };
+
+    const handleScroll = () => {
+      if (plansRef.current) {
+        const plansTop = plansRef.current.offsetTop;
+        const plansHeight = plansRef.current.offsetHeight;
+        const windowScrollTop = window.scrollY;
+        const windowHeight = window.innerHeight;
+
+        if (windowScrollTop + windowHeight > plansTop && windowScrollTop < plansTop + plansHeight) {
+          animation();
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
     <section className="col-xxl-12 col-xl-12 col-lg-12 col-sm-12 col-12 text-center" id="fourth">
         <h2>{section4Eng.h2}</h2>
         <p>{section4Eng.p}</p>
-        <div className="plans">
+        <div className="plans" ref={plansRef}>
             <div className="left_bar"></div>
             <div className="plan">
                 <div className="case"></div>
