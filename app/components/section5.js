@@ -66,10 +66,10 @@ const Section5 = () => {
       };
   return (
     <>
-        <section className="col-xxl-5" id="fifth_1">
+        <section className="col-xxl-5 col-xl-4 col-lg-7 col-sm-12 col-12" id="fifth_1">
             <h2><span>{section5Eng.h2[1]}</span><br/>{section5Eng.h2[2]}<br/>{section5Eng.h2[3]}</h2>
         </section>  
-        <section className="col-xxl-7" id="fifth_2">
+        <section className="col-xxl-7 col-xl-8 col-lg-5 col-sm-12 col-12" id="fifth_2">
             <div className="items">
             {itemsVisible.map((item, index) => (
                 <div

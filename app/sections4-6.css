@@ -259,3 +259,131 @@
 #sixth_2 > img {
     margin-top: 91px;
 }
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+    #sixth_1 {
+        padding-top: 16px;
+        padding-bottom: 60px;
+    }
+    #sixth_1 > h2 {
+        margin-top: 60px;
+    }
+    #sixth_2 {
+        margin: 0;
+        padding: 0;
+        padding-bottom: 80px;
+    }
+    #sixth_2 > img {
+        margin: 0;
+        padding: 0;
+    }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+    #sixth_1 {
+        padding-top: 16px;
+        padding-bottom: 60px;
+    }
+    #sixth_1 > h2 {
+        margin-top: 60px;
+    }
+    #sixth_2 {
+        margin: 0;
+        padding: 0;
+        padding-bottom: 80px;
+    }
+    #sixth_2 > img {
+        margin: 0;
+        padding: 0;
+    }
+    #fifth_2 > .items {
+        height: auto;
+        padding: 0px 15px;
+        width: 389px;
+        margin-left: 45px;
+    }
+}
+@media (min-width: 576px) and (max-width: 991px) {
+    #fourth > .plans {
+        width: 100%;
+    }
+    #fourth > .plans > .plan {
+        width: calc(100% - 40px);
+    }
+    #fourth > .plans > .plan > .case {
+        margin-left: -70px;
+    }
+    #fifth_1 {
+        padding: 0;
+    }
+    #fifth_1 > h2 {
+        margin-top: 69px;
+        margin-left: 151px;
+    }
+    #fifth_2 {
+        margin: 0;
+    }
+    #fifth_2 > .items {
+        width: 100%;
+        margin: 0;
+        padding: 0;        
+    }
+    #fifth_2 > .items > .item {
+        width: 100%;
+    }
+    #sixth_2 {
+        margin: 0;
+        padding: 0;
+    }
+    #sixth_2 > img {
+        margin: 0;
+    }
+}
+@media (max-width: 575px) {
+    #fourth > .plans {
+        width: 100%;
+        height: 1450px;
+    }
+    #fourth > .plans > .left_bar {
+        margin-left: -20px;
+        height: 100%;
+    }
+    #fourth > .plans > .plan {
+        width: calc(100% - 40px);
+        margin-bottom: 170px;
+    }
+    #fourth > .plans > .plan > .case {
+        margin-left: -90px;
+    }
+    #fourth > .plans > .plan > .text {
+        width: 257px;
+        height: auto;
+    }
+    #fifth_1 {
+        padding: 0;
+    }
+    #fifth_1 > h2 {
+        margin-top: 69px;
+        margin-left: 40px;
+    }
+    #fifth_2 {
+        margin: 0;
+    }
+    #fifth_2 > .items {
+        width: 100%;
+        margin: 0;
+        padding: 0;        
+    }
+    #fifth_2 > .items > .item {
+        width: 100%;
+    }
+    #sixth_2 {
+        margin: 0;
+        padding: 0;
+    }
+    #sixth_1 > button {
+        width: 300px;
+    }
+    #sixth_2 > img {
+        margin: 0;
+    }
+}

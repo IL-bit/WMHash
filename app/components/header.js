@@ -24,7 +24,7 @@ const Header = () => {
     }
   return (
     <header className="row">
-        <div className="col-xxl-12">
+        <div className="col-xxl-12 col-xl-12 col-lg-12 col-sm-12 col-12">
             <div className="header">
                 <Image src={LogoSvg} alt='#' className='logo'/>
                 <nav>
@@ -41,7 +41,8 @@ const Header = () => {
                     <button><Link href="#" ><Image src={twiterSvg} alt='#'/></Link></button>
                     <button><Link href="#" ><Image src={YouTubeSvg} alt='#'/></Link></button>
                     <button><Link href="#" ><Image src={tgSvg} alt='#'/></Link></button>
-                    <button className='lang'>eng</button>              
+                    <button className='lang'>eng</button> 
+                    <button className='burger'></button>             
                 </div>
             </div>
         </div>

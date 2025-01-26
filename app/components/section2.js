@@ -53,7 +53,7 @@ const Section2 = () => {
         ]
     }
   return (
-    <section className="col-xxl-12 text-center" id='second'>
+    <section className="col-xxl-12 col-xl-12 col-lg-12 col-sm-12 col-12 text-center" id='second'>
         <div className='what_is'>
             <Image src={LogoSvg} alt='#' />
             <div className="text">

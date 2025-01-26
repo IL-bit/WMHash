@@ -45,7 +45,7 @@ const Section1 = () => {
     ]
   };
   return (
-    <section className="col-xxl-12 text-center" id='first'>
+    <section className="col-xxl-12 col-xl-12 col-lg-12 col-sm-12 col-12 text-center" id='first'>
         <h1><span>{section1Eng.h1[1]}</span><br/>{section1Eng.h1[2]}</h1>
         <p>{section1Eng.p[1]}<br/>{section1Eng.p[2]}</p>
         <button>{section1Eng.button}</button>

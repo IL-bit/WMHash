@@ -13,7 +13,7 @@ const Footer = () => {
     };
   return (
     <footer className="row">
-        <div className="col-xxl-12 text-center footer">
+        <div className="col-xxl-12 col-xl-12 col-lg-12 text-center footer">
             <h2>{footerEng.h2}</h2>
             <div className="items">
                 <div className="qr"></div>

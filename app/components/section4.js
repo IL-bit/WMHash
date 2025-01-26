@@ -24,7 +24,7 @@ const Section4 = () => {
         ]
     };
   return (
-    <section className="col-xxl-12 text-center" id="fourth">
+    <section className="col-xxl-12 col-xl-12 col-lg-12 col-sm-12 col-12 text-center" id="fourth">
         <h2>{section4Eng.h2}</h2>
         <p>{section4Eng.p}</p>
         <div className="plans">

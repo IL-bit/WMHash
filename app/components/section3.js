@@ -26,7 +26,7 @@ const Section3 = () => {
     ]
   }
   return (
-    <section className="col-xxl-12 text-center" id="third">
+    <section className="col-xxl-12 col-xl-12 col-lg-12 col-sm-12 col-12 text-center" id="third">
         <h2>{section3Eng.h2}</h2>
         <div className="items">
           <div className="item item-1">
