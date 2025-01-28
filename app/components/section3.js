@@ -1,7 +1,8 @@
 "use client";
 import React, { useEffect, useRef } from 'react';
-
+import { useSelector } from 'react-redux';
 const Section3 = () => {
+  const lang = useSelector((state) => state.language);
   const section3Eng = {
     h2: 'Achievements and Reviews',
     items: [
@@ -25,6 +26,30 @@ const Section3 = () => {
       }
     ]
   };
+  const section3Rus = {
+    h2: 'Наши достижения',
+    items: [
+      {
+        p: {
+          1: 'Добытых блоков'
+        }
+      },
+      {
+        p: {
+          1: 'Тысячи игроков в',
+          2: 'мировом',
+          3: 'рейтинге'
+        }
+      },
+      {
+        p: {
+          1: 'Регулярные',
+          2: 'ивенты и конкурсы'
+        }
+      }
+    ]
+  };
+  const section3 = lang === 'eng' ? section3Eng : section3Rus;
   const h2Ref = useRef(null);
   const item1Ref = useRef(null);
   const item2Ref = useRef(null);
@@ -86,24 +111,24 @@ const Section3 = () => {
   }, []);
   return (
     <section ref={sectionRef} className="col-xxl-12 col-xl-12 col-lg-12 col-sm-12 col-12 text-center" id="third">
-        <h2 ref={h2Ref}>{section3Eng.h2}</h2>
-        <div className="items">
-          <div className="item item-1" ref={item1Ref}>
-            <div className="text">
-              <h4>{section3Eng.items[0].p[1]}</h4>
-            </div>
-          </div>
-          <div className="item item-2" ref={item2Ref}>
-            <div className="text">
-              <h4>{section3Eng.items[1].p[1]}<br/>{section3Eng.items[1].p[2]}<br/>{section3Eng.items[1].p[3]}</h4>
-            </div>
-          </div>
-          <div className="item item-3" ref={item3Ref}>
-            <div className="text">
-              <h4>{section3Eng.items[2].p[1]}<br/>{section3Eng.items[2].p[2]}</h4>
-            </div>
+      <h2 ref={h2Ref}>{section3.h2}</h2>
+      <div className="items">
+        <div className="item item-1" ref={item1Ref}>
+          <div className="text">
+            <h4>{section3.items[0].p[1]}</h4>
           </div>
         </div>
+        <div className="item item-2" ref={item2Ref}>
+          <div className="text">
+            <h4>{section3.items[1].p[1]}<br/>{section3.items[1].p[2]}<br/>{section3.items[1].p[3]}</h4>
+          </div>
+        </div>
+        <div className="item item-3" ref={item3Ref}>
+          <div className="text">
+            <h4>{section3.items[2].p[1]}<br/>{section3.items[2].p[2]}</h4>
+          </div>
+        </div>
+      </div>
     </section>
   )
 }

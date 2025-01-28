@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useRef } from 'react';
+import { useSelector } from 'react-redux';
 import Image from 'next/image';
 import LogoSvg from '../../public/img/logo_2.svg';
 import img_1 from '../../public/img/move.svg';
@@ -8,6 +9,7 @@ import img_3 from '../../public/img/defence.svg';
 import img_4 from '../../public/img/referal.svg';
 
 const Section2 = () => {
+    const lang = useSelector((state) => state.language);
     const section2Eng = {
         h2: 'What is WildMiner Hash?',
         p: "WildMiner Hash is a unique game blending gaming and token mining. We've crafted a space where every player can enjoy the process and earn tangible rewards.",
@@ -53,6 +55,52 @@ const Section2 = () => {
             }
         ]
     };
+    const section2Rus = {
+      h2: 'Что такое WildMiner Hash?',
+      p: '– это уникальная игра, которая сочетает в себе элементы гейминга и майнинга токенов. Мы создали пространство, где каждый игрок может не только наслаждаться процессом, но и получать ощутимые награды.',
+      button: 'Перейти в Telegram-бот',
+      p2: {
+        1: 'Перейдите в Телеграм бот и начните',
+        2: 'своё приключение'
+      },
+      items: [
+        {
+          h4: 'Интуитивный игровой процесс:',
+          p: {
+            1: 'Подходит как для новичков, так и для ',
+            2: 'опытных пользователей. Все механики',
+            3: 'понятны и просты в освоении.'
+          },
+          image: img_1
+        },
+        {
+          h4: 'Честное распределение наград:',
+          p: {
+            1: 'Система Shares гарантирует',
+            2: 'справедливость для всех участников.',
+            3: 'независимо от мощности устройства.'
+          },
+          image: img_2
+        },
+        {
+          h4: 'Безопасность и защита:',
+          p: {
+            1: 'Эффективная система антиботов',
+            2: 'обеспечивает честную игру для всех.'
+          },
+          image: img_3
+        },
+        {
+          h4: 'Реферальная программа:',
+          p: {
+            1: 'Получайте бонусы за приглашение',
+            2: 'друзей и развивайте своё сообщество.'
+          },
+          image: img_4
+        }
+      ]
+    };
+    const section2 = lang === 'eng' ? section2Eng : section2Rus;
     const whatIsRef = useRef(null);
     const itemRefs = useRef([]);
     const sectionRef = useRef(null);
@@ -92,35 +140,38 @@ const Section2 = () => {
           }
         }
       };
-  
+      
       window.addEventListener('scroll', handleScroll);
   
       return () => {
         window.removeEventListener('scroll', handleScroll);
       };
     }, []);
+    const handleLinkClick = (link) => {
+      window.open(link, "_blank");
+    };
   return (
     <section ref={sectionRef} className="col-xxl-12 col-xl-12 col-lg-12 col-sm-12 col-12 text-center" id='second'>
-        <div className='what_is' ref={whatIsRef}>
-            <Image src={LogoSvg} alt='#' />
-            <div className="text">
-                <h2>{section2Eng.h2}</h2>
-                <p>{section2Eng.p}</p>
+      <div className='what_is' ref={whatIsRef}>
+        <Image src={LogoSvg} alt='#' />
+        <div className="text">
+          <h2>{section2.h2}</h2>
+          <p>{section2.p}</p>
+        </div>
+      </div>
+      <div className="items">
+        {section2.items.map((item, index) => (
+          <div className="item" key={index} ref={(ref) => (itemRefs.current[index] = ref)}>
+            <Image src={item.image} alt="#"/>
+            <div className='text'>
+              <h4>{item.h4}</h4>
+              <p>{item.p[1]}<br/>{item.p[2]}<br/>{item.p[3]}</p>
             </div>
-        </div>
-        <div className="items">
-            {section2Eng.items.map((item, index) => (
-                <div className="item" key={index} ref={(ref) => (itemRefs.current[index] = ref)}>
-                <Image src={item.image} alt="#"/>
-                    <div className='text'>
-                        <h4>{item.h4}</h4>
-                        <p>{item.p[1]}<br/>{item.p[2]}<br/>{item.p[3]}</p>                
-                    </div>
-                </div>
-            ))}
-        </div>
-        <button>{section2Eng.button}</button>
-        <p>{section2Eng.p2[1]}<br/>{section2Eng.p2[2]}</p>
+          </div>
+        ))}
+      </div>
+      <button onClick={() => handleLinkClick("https://t.me/WildMinerHash_bot")}>{section2.button}</button>
+      <p>{section2.p2[1]}<br/>{section2.p2[2]}</p>
     </section>
   )
 }

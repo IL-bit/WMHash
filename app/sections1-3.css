@@ -489,7 +489,7 @@
         display: block;
         position: relative;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translateX(-50%) !important;
         margin-bottom: 14px;
     }
     #second > .items > .item > img {
@@ -526,11 +526,30 @@
         width: 400px;
         height: 91px;
     }
+    #first > .items > .item > .text {
+        left: 190px;
+    }
+    #second > .items > .item > .text {
+        left: 220px;
+    }
     #second > .items > .item > img {
         position: relative;
         margin-left: -300px;
     }
     #third > .items > .item > .text {
         right: 45px;
+    }
+}
+@media (max-width: 567px) {
+    #first > .items > .item > .text {
+        left: auto;
+        right: 20px;
+    }
+    #second > .items > .item > .text {
+        left: auto;
+        right: 15px;
+    }
+    #second > .what_is > .text > h2 {
+        width: 100%;
     }
 }

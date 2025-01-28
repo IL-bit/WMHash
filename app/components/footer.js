@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useRef } from 'react';
+import { useSelector } from 'react-redux';
 import Image from 'next/image';
 import logo from '../../public/img/logo.svg';
 import youtube from '../../public/img/youtube.svg';
@@ -9,9 +10,14 @@ import binance from '../../public/img/binance.svg';
 import master from '../../public/img/master.svg';
 
 const Footer = () => {
+  const lang = useSelector((state) => state.language);
     const footerEng = {
         h2: 'Earn now:'
     };
+    const footerRus = {
+      h2: 'Начните зарабатывать сейчас:'
+    };
+    const footer = lang === 'eng' ? footerEng : footerRus;
     const qrRef = useRef(null);
     const itemRefs = useRef([]);
     const botRef = useRef(null);
@@ -67,21 +73,24 @@ const Footer = () => {
         window.removeEventListener('scroll', handleScroll);
       };
     }, []);
+    const handleLinkClick = (link) => {
+      window.open(link, "_blank");
+    };
   return (
-    <footer ref={footerRef} className="row">
-        <div className="col-xxl-12 col-xl-12 col-lg-12 text-center footer">
-            <h2>{footerEng.h2}</h2>
-            <div className="items">
-                <div ref={qrRef} className="qr"></div>
-                <button ref={(ref) => (itemRefs.current[0] = ref)} className="item"><Image src={master} alt="#" /></button>
-                <button ref={(ref) => (itemRefs.current[1] = ref)} className="item"><Image src={youtube} alt="#" /></button>  
-                <button ref={(ref) => (itemRefs.current[2] = ref)} className="item"><Image src={twitter} alt="#" /></button>                              
-                <button ref={(ref) => (itemRefs.current[3] = ref)} className="item"><Image src={tg} alt="#" /></button>
-                <button ref={(ref) => (itemRefs.current[4] = ref)} className="item"><Image src={binance} alt="#" /></button>
-                <button ref={botRef} className="bot">@WildMinerHash_bot</button>
-            </div>
-            <Image src={logo} alt='#'/>
+<footer ref={footerRef} className="row" id='footer'>
+      <div className="col-xxl-12 col-xl-12 col-lg-12 text-center footer">
+        <h2>{footer.h2}</h2>
+        <div className="items">
+            <div ref={qrRef} className="qr"></div>
+            <button ref={(ref) => (itemRefs.current[0] = ref)} className="item" onClick={() => handleLinkClick("https://coinmarketcap.com/community/profile/WildMinerHash/")}><Image src={master} alt="#" /></button>
+            <button ref={(ref) => (itemRefs.current[1] = ref)} className="item" onClick={() => handleLinkClick("https://www.youtube.com/@WildMinerHash")}><Image src={youtube} alt="#" /></button>  
+            <button ref={(ref) => (itemRefs.current[2] = ref)} className="item" onClick={() => handleLinkClick("https://x.com/wildminerhash")}><Image src={twitter} alt="#" /></button>                              
+            <button ref={(ref) => (itemRefs.current[3] = ref)} className="item" onClick={() => handleLinkClick("https://t.me/WildMinerHash")}><Image src={tg} alt="#" /></button>
+            <button ref={(ref) => (itemRefs.current[4] = ref)} className="item" onClick={() => handleLinkClick("https://www.binance.com/ru/square/profile/wildminerhash")}><Image src={binance} alt="#" /></button>
+            <button ref={botRef} className="bot" onClick={() => handleLinkClick("https://t.me/WildMinerHash_bot")}>@WildMinerHash_bot</button>
         </div>
+        <Image src={logo} alt="#" />
+      </div>
     </footer>
   )
 }

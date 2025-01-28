@@ -26,6 +26,7 @@
     margin-top: 44px;
     width: 600px;
     left: 50%;
+    height: 910px;
     transform: translateX(-50%);
 }
 #fourth > .plans > .left_bar {
@@ -313,7 +314,7 @@
 @media (max-width: 575px) {
     #fourth > .plans {
         width: 100%;
-        height: 1450px;
+        height: 1606px;
     }
     #fourth > .plans > .left_bar {
         margin-left: -20px;
@@ -321,14 +322,17 @@
     }
     #fourth > .plans > .plan {
         width: calc(100% - 40px);
-        margin-bottom: 170px;
+        margin-bottom: 197px;
+    }
+    #fourth > .plans >  :nth-child(4) {
+        margin-bottom: 240px;
     }
     #fourth > .plans > .plan > .case {
-        margin-left: -90px;
+        margin-left: -95px;
     }
     #fourth > .plans > .plan > .text {
         width: 257px;
-        height: auto;
+        height: auto; 
     }
     #fifth_1 {
         padding: 0;
@@ -357,5 +361,8 @@
     }
     #sixth_2 > img {
         margin: 0;
+    }
+    #sixth_1 > h2 {
+        font-size: 38px;
     }
 }
